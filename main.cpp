@@ -1,7 +1,6 @@
 #include <cassert>
 #include <iostream>
 
-#include "RestaurantChain.h"
 #include "Container.h"
 
 int main()
@@ -73,6 +72,9 @@ int main()
     assert(chain.numofemployees()==60);
 
     //Container
+    Container<Restaurant> cont;
+    assert(cont.size()==0);
+    assert(cont.numofelements()==0);
 
     std::cout<<"Tests are finished!"<<std::endl;
 

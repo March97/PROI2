@@ -1,6 +1,7 @@
 #include <iostream>
+#include "RestaurantChain.h"
 
-template <class T>
+template <typename T>
 class Container
 {
 private:
@@ -21,5 +22,9 @@ public:
 
     //Destruktor
     ~Container();
+
+    //Wlasciwosci
+    inline unsigned int size() {return size_;}
+    inline unsigned int numofelements() {return numofelements_;}
 };
 
