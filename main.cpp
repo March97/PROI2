@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "RestaurantChain.h"
+#include "Container.h"
 
 int main()
 {
@@ -70,6 +71,8 @@ int main()
     assert(chain.numofrestaurants()==4);
     assert(chain.chainincomes()==180000);
     assert(chain.numofemployees()==60);
+
+    //Container
 
     std::cout<<"Tests are finished!"<<std::endl;
 
