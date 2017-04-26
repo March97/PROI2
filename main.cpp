@@ -72,9 +72,31 @@ int main()
     assert(chain.numofemployees()==60);
 
     //Container
-    Container<Restaurant> cont;
-    assert(cont.size()==0);
-    assert(cont.numofelements()==0);
+
+    //konstruktor domyslny
+    Container<Restaurant> contr;
+    assert(contr.size()==8);
+    assert(contr.numofelements()==0);
+
+    Container<RestaurantChain> contc;
+    assert(contc.size()==8);
+    assert(contc.numofelements()==0);
+
+    Container<int> contint;
+    assert(contint.size()==8);
+    assert(contint.numofelements()==0);
+
+    Container<float> contfloat;
+    assert(contfloat.size()==8);
+    assert(contfloat.numofelements()==0);
+
+    Container<char> contchar;
+    assert(contchar.size()==8);
+    assert(contchar.numofelements()==0);
+
+    Container<std::string> conts;
+    assert(conts.size()==8);
+    assert(conts.numofelements()==0);
 
     std::cout<<"Tests are finished!"<<std::endl;
 

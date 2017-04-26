@@ -20,11 +20,19 @@ public:
     //Konstruktor domyslny
     Container();
 
+    //Konstruktor przesuwajacy
+    Container(Container &&source);
+
     //Destruktor
     ~Container();
+
+    //Operatory
+    //Operator przesuwajacy przypisania
+    Container &operator=(Container &&source);
 
     //Wlasciwosci
     inline unsigned int size() {return size_;}
     inline unsigned int numofelements() {return numofelements_;}
+    //inline T data() {return *data_;}
 };
 
