@@ -31,6 +31,10 @@ public:
     Container &push(T source);
     //Usuniecie elementu
     T del();
+    //Zwraca dany element
+    T get(unsigned int index) const;
+    //Zwraca wskaznik do danego elementu
+    T &get(unsigned int index);
 
     //Operatory
     //Operator przesuwajacy przypisania

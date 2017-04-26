@@ -65,6 +65,29 @@ T Container<T>::del()
     return data_[--numofelements_];
 }
 
+template <typename T>
+    T Container<T>::get(unsigned int index) const
+    {
+        if (index >= numofelements_)
+        {
+            std::string error="Too high index";
+            throw error;
+        }
+        return data_[index];
+    }
+
+    // Zwraca wskaünik na dany element
+    template <typename T>
+    T &Container<T>::get(unsigned int index)
+    {
+        if (index >= numofelements_)
+        {
+            std::string error="Too high index";
+            throw error;
+        }
+        return data_[index];
+    }
+
 //Operatory
 template <typename T>
 Container<T> &Container<T>::operator=(Container &&source)
