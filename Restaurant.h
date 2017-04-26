@@ -39,7 +39,7 @@ public:
 
     inline Restaurant &operator+(Restaurant &r) {return together(*this, r);}
 
-    Restaurant &operator=(Restaurant &r);
+    //Restaurant &operator=(Restaurant &r);
 
     //operatory strumienia
     friend std::ostream &operator<<(std::ostream &output, const Restaurant &r);

@@ -137,7 +137,7 @@ Restaurant &Restaurant::operator--(int)
     return *this;
 }
 
-Restaurant &Restaurant::operator=(Restaurant &r)
+/*Restaurant &Restaurant::operator=(Restaurant &r)
 {
     if(this!=&r)
     {
@@ -149,7 +149,7 @@ Restaurant &Restaurant::operator=(Restaurant &r)
         return *this;
         }
     return *this;
-}
+}*/
 
 Restaurant &Restaurant::together(Restaurant &a, Restaurant &b)
 {

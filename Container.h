@@ -26,6 +26,10 @@ public:
     //Destruktor
     ~Container();
 
+    //Metody
+    //Dodanie nowego elementu
+    Container &push(T source);
+
     //Operatory
     //Operator przesuwajacy przypisania
     Container &operator=(Container &&source);

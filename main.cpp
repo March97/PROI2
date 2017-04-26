@@ -1,6 +1,7 @@
 #include <cassert>
 #include <iostream>
 
+//#include "RestaurantChain.h"
 #include "Container.h"
 
 int main()
@@ -97,6 +98,16 @@ int main()
     Container<std::string> conts;
     assert(conts.size()==8);
     assert(conts.numofelements()==0);
+
+    //push
+    int inta=5;
+    Container<int> contp;
+    for(int i=0; i<2000000; ++i)
+    {
+        contp.push(inta);
+    }
+    assert(contp.numofelements()==2000000);
+    assert(contp.size()==2097152);
 
     std::cout<<"Tests are finished!"<<std::endl;
 
