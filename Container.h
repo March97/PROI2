@@ -29,6 +29,8 @@ public:
     //Metody
     //Dodanie nowego elementu
     Container &push(T source);
+    //Usuniecie elementu
+    T del();
 
     //Operatory
     //Operator przesuwajacy przypisania

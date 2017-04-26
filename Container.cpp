@@ -54,6 +54,17 @@ Container<T> &Container<T>::push(T source)
     return *this;
 }
 
+template <typename T>
+T Container<T>::del()
+{
+    if(numofelements_==0)
+    {
+        std::string error="No item to remove";
+        throw error;
+    }
+    return data_[--numofelements_];
+}
+
 //Operatory
 template <typename T>
 Container<T> &Container<T>::operator=(Container &&source)

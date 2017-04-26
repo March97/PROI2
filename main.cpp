@@ -109,6 +109,14 @@ int main()
     assert(contp.numofelements()==2000000);
     assert(contp.size()==2097152);
 
+    //del
+    for(int i=0; i<2000000; ++i)
+    {
+        contp.del();
+    }
+    assert(contp.numofelements()==0);
+    assert(contp.size()==2097152);
+
     std::cout<<"Tests are finished!"<<std::endl;
 
     return 0;
