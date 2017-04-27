@@ -19,7 +19,8 @@ public:
 
     //Konstruktor domyslny
     Container();
-
+    //Konstruktor kopiujacy
+    Container(const Container &source);
     //Konstruktor przesuwajacy
     Container(Container &&source);
 
@@ -47,6 +48,6 @@ public:
     //Wlasciwosci
     inline unsigned int size() {return size_;}
     inline unsigned int numofelements() {return numofelements_;}
-    inline T data() {return *data_;}
+    //inline T data() {return *data_;}
 };
 

@@ -11,6 +11,19 @@ Container<T>::Container()
 }
 
 template <typename T>
+Container<T>::Container(const Container &source)
+{
+    size_=source.size_;
+    numofelements_=source.numofelements_;
+    data_=new T[source.size_];
+
+    for (unsigned int i=0; i<numofelements_; ++i)
+    {
+        data_[i]=source.data_[i];
+    }
+}
+
+template <typename T>
 Container<T>::Container(Container &&source)
 {
     size_=source.size();

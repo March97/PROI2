@@ -109,6 +109,12 @@ int main()
     assert(contp.numofelements()==2000000);
     assert(contp.size()==2097152);
 
+    //konstruktor kopiujacy
+
+    Container<int> copyint(contp);
+    assert(copyint.numofelements()==contp.numofelements());
+    assert(copyint.size()==contp.size());
+
     //del
     for(int i=0; i<2000000; ++i)
     {
