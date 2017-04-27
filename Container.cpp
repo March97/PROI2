@@ -66,27 +66,27 @@ T Container<T>::del()
 }
 
 template <typename T>
-    T Container<T>::get(unsigned int index) const
+T Container<T>::get(unsigned int index) const
+{
+    if (index >= numofelements_)
     {
-        if (index >= numofelements_)
-        {
-            std::string error="Too high index";
-            throw error;
-        }
-        return data_[index];
+        std::string error="Too high index";
+        throw error;
     }
+    return data_[index];
+}
 
-    // Zwraca wskaünik na dany element
-    template <typename T>
-    T &Container<T>::get(unsigned int index)
+// Zwraca wskaznik na dany element
+template <typename T>
+T &Container<T>::get(unsigned int index)
+{
+    if (index >= numofelements_)
     {
-        if (index >= numofelements_)
-        {
-            std::string error="Too high index";
-            throw error;
-        }
-        return data_[index];
+        std::string error="Too high index";
+        throw error;
     }
+    return data_[index];
+}
 
 //Operatory
 template <typename T>
@@ -100,6 +100,18 @@ Container<T> &Container<T>::operator=(Container &&source)
         data_=std::move(source.data_);
     }
     return *this;
+}
+
+template <typename T>
+T Container<T>::operator[](unsigned int index) const
+{
+    return this->get(index);
+}
+
+template <typename T>
+T &Container<T>::operator[](unsigned int index)
+{
+    return this->get(index);
 }
 
 template class Container<int>;

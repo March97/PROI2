@@ -117,6 +117,24 @@ int main()
     assert(contp.numofelements()==0);
     assert(contp.size()==2097152);
 
+    //get
+    //Container<int> contintget={1, 2, 3, 4};
+    Container<int> contintget;
+    contintget.push(0);
+    contintget.push(0);
+    contintget.push(0);
+    contintget.push(0);
+
+    contintget.get(0)=4;
+    contintget.get(1)=5;
+    contintget.get(2)=6;
+    contintget.get(3)=7;
+
+    assert(contintget.get(0)==4);
+    assert(contintget.get(1)==5);
+    assert(contintget.get(2)==6);
+    assert(contintget.get(3)==7);
+
     std::cout<<"Tests are finished!"<<std::endl;
 
     return 0;

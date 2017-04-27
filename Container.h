@@ -35,6 +35,10 @@ public:
     T get(unsigned int index) const;
     //Zwraca wskaznik do danego elementu
     T &get(unsigned int index);
+    //zwraca  wartosc elementu
+    T operator[](unsigned int index) const;
+    //zwraca wskaznik na dany element
+    T &operator[](unsigned int index);
 
     //Operatory
     //Operator przesuwajacy przypisania
@@ -43,6 +47,6 @@ public:
     //Wlasciwosci
     inline unsigned int size() {return size_;}
     inline unsigned int numofelements() {return numofelements_;}
-    //inline T data() {return *data_;}
+    inline T data() {return *data_;}
 };
 
