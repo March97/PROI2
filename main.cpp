@@ -110,7 +110,6 @@ int main()
     assert(contp.size()==2097152);
 
     //konstruktor kopiujacy
-
     Container<int> copyint(contp);
     assert(copyint.numofelements()==contp.numofelements());
     assert(copyint.size()==contp.size());
