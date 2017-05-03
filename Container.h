@@ -38,14 +38,18 @@ public:
     T get(unsigned int index) const;
     //Zwraca wskaznik do danego elementu
     T &get(unsigned int index);
-    //zwraca  wartosc elementu
-    T operator[](unsigned int index) const;
-    //zwraca wskaznik na dany element
-    T &operator[](unsigned int index);
 
     //Operatory
     //Operator przesuwajacy przypisania
     Container &operator=(Container &&source);
+    //zwraca  wartosc elementu
+    T operator[](unsigned int index) const;
+    //zwraca wskaznik na dany element
+    T &operator[](unsigned int index);
+    //dodaje element na koniec push(T source)
+    Container &operator+=(T source);
+    //usuwa ostatni element del()
+    T operator--(int);
 
     //Wlasciwosci
     inline unsigned int size() {return size_;}
@@ -114,8 +118,7 @@ Container<T> &Container<T>::push(T source)
         data_=tmp;
     }
 
-    data_[numofelements_+1]=source;
-    numofelements_++;
+    data_[numofelements_++]=source;
 
     return *this;
 }
@@ -179,6 +182,20 @@ T &Container<T>::operator[](unsigned int index)
 {
     return this->get(index);
 }
+
+template <typename T>
+Container<T> &Container<T>::operator+=(T source)
+{
+    this->push(source);
+    return *this;
+}
+
+template <typename T>
+T Container<T>::operator--(int)
+{
+    return this->del();
+}
+
 
 template class Container<int>;
 template class Container<float>;

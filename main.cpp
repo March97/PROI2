@@ -140,6 +140,24 @@ int main()
     assert(contintget.get(2)==6);
     assert(contintget.get(3)==7);
 
+    //+=
+    contintget+=8;
+    assert(contintget.get(0)==4);
+    assert(contintget.get(1)==5);
+    assert(contintget.get(2)==6);
+    assert(contintget.get(3)==7);
+    assert(contintget.get(4)==8);
+    //[]
+    assert(contintget[4]==8);
+    //--
+    contintget--;
+    assert(contintget[0]==4);
+    assert(contintget[1]==5);
+    assert(contintget[2]==6);
+    assert(contintget[3]==7);
+
+
+
     std::cout<<"Tests are finished!"<<std::endl;
 
     return 0;
