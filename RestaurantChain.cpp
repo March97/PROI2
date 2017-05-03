@@ -68,3 +68,8 @@ bool RestaurantChain::operator!=(RestaurantChain &c)
 {
     return(numofrestaurants()!=c.numofrestaurants_);
 }
+
+bool RestaurantChain::operator==(RestaurantChain &c)
+{
+    return(numofrestaurants()==c.numofrestaurants_);
+}

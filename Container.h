@@ -38,6 +38,8 @@ public:
     T get(unsigned int index) const;
     //Zwraca wskaznik do danego elementu
     T &get(unsigned int index);
+    //usuwa dane element
+    Container &remove(T source);
 
     //Operatory
     //Operator przesuwajacy przypisania
@@ -148,6 +150,35 @@ T Container<T>::get(unsigned int index) const
         throw error;
     }
     return data_[index];
+}
+
+template <typename T>
+Container<T> &Container<T>::remove(T source)
+{
+    unsigned int index;
+    bool found=false;
+
+    for (index=0; index<numofelements_; index++)
+    {
+        if (this->data_[index]==source)
+        {
+            found = true;
+            break;
+        }
+    }
+
+    if (found==false)
+    {
+        std::string error="Element doesn't exist";
+        throw error;
+    }
+
+    for (unsigned int j=index; j<numofelements_-1; j++)
+        data_[j]=data_[j+1];
+
+    --numofelements_;
+
+    return *this;
 }
 
 // Zwraca wskaznik na dany element

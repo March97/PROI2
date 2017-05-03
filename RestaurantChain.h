@@ -30,6 +30,7 @@ public:
     friend std::ostream &operator<<(std::ostream &output, const RestaurantChain &c);
     friend std::istream &operator>>(std::istream &input, RestaurantChain &c);
     bool operator!=(RestaurantChain &c);
+    bool operator==(RestaurantChain &c);
 
     //wlasciwosci
     inline std::string name() {return name_;}
