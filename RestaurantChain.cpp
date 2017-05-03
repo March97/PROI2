@@ -63,3 +63,8 @@ std::istream &operator>>(std::istream &input, RestaurantChain &c)
 {
     return input>>c.name_>>c.numofemployees_>>c.numofrestaurants_>>c.chainincomes_;
 }
+
+bool RestaurantChain::operator!=(RestaurantChain &c)
+{
+    return(numofrestaurants()!=c.numofrestaurants_);
+}

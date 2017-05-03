@@ -50,6 +50,11 @@ public:
     Container &operator+=(T source);
     //usuwa ostatni element del()
     T operator--(int);
+    //==
+    bool operator==(Container &source);
+    // !=
+    bool operator!=(Container &source);
+
 
     //Wlasciwosci
     inline unsigned int size() {return size_;}
@@ -194,6 +199,22 @@ template <typename T>
 T Container<T>::operator--(int)
 {
     return this->del();
+}
+template <typename T>
+bool Container<T>::operator==(Container<T> &source)
+{
+    if(numofelements_!=source.numofelements()) return false;
+
+    for (unsigned int i=0; i<source.numofelements(); i++)
+            if (data_[i]!=source[i]) return false;
+
+    return true;
+}
+
+template <typename T>
+bool Container<T>::operator!=(Container<T> &source)
+{
+    return !(*this==source);
 }
 
 

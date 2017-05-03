@@ -156,7 +156,16 @@ int main()
     assert(contintget[2]==6);
     assert(contintget[3]==7);
 
-
+    //== !=
+    Container<int> z1, z2;
+    z1.push(0);
+    z1.push(1);
+    z1.push(2);
+    z2.push(0);
+    z2.push(1);
+    z2.push(2);
+    assert(z1==z2);
+    assert(!(z1!=z2));
 
     std::cout<<"Tests are finished!"<<std::endl;
 
