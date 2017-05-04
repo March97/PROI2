@@ -42,6 +42,8 @@ public:
     Container &remove(T source);
 
     //Operatory
+    //operator przypisania
+    Container &operator=(Container &source);
     //Operator przesuwajacy przypisania
     Container &operator=(Container &&source);
     //zwraca  wartosc elementu
@@ -194,6 +196,21 @@ T &Container<T>::get(unsigned int index)
 }
 
 //Operatory
+template <typename T>
+Container<T> &Container<T>::operator=(Container &source)
+{
+    if (*this!=source)
+    {
+        size_=source.size_;
+        numofelements_=source.numofelements_;
+        data_=new T[source.size_];
+
+        for (unsigned int i=0; i<source.numofelements_; i++)
+            data_[i]=source.data_[i];
+    }
+    return *this;
+}
+
 template <typename T>
 Container<T> &Container<T>::operator=(Container &&source)
 {

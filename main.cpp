@@ -171,6 +171,10 @@ int main()
     assert(z1[0]==0);
     assert(z1[1]==2);
 
+    //=
+    z1=z2;
+    assert(z1==z2);
+
     std::cout<<"Tests are finished!"<<std::endl;
 
     return 0;
