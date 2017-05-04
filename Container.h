@@ -38,8 +38,10 @@ public:
     T get(unsigned int index) const;
     //Zwraca wskaznik do danego elementu
     T &get(unsigned int index);
-    //usuwa dane element
+    //usuwa dany element
     Container &remove(T source);
+    //zwraca wielkosc kontenera
+    unsigned int sum();
 
     //Operatory
     //operator przypisania
@@ -182,6 +184,41 @@ Container<T> &Container<T>::remove(T source)
 
     return *this;
 }
+
+template <typename T>
+unsigned int Container<T>::sum()
+{
+    return numofelements_;
+}
+
+//funkcja specjalizowana dla restauracji
+template<>
+unsigned int Container<Restaurant>::sum()
+{
+    unsigned int suma=0;
+
+    for (unsigned int i=0; i<numofelements_; ++i)
+    {
+        suma=data_[i].employees();
+    }
+
+    return suma;
+}
+
+//funkcja specjalizowana dla restaurnatchain
+template<>
+unsigned int Container<RestaurantChain>::sum()
+{
+    unsigned int suma=0;
+
+    for (unsigned int i=0; i<numofelements_; ++i)
+    {
+        suma=data_[i].numofrestaurants();
+    }
+
+    return suma;
+}
+
 
 // Zwraca wskaznik na dany element
 template <typename T>
